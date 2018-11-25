@@ -10,15 +10,11 @@ export default class about extends Component {
 	}
 
 	render() {
+		const { user } = this.props;
 		return (
 			<Layout title="About">
-				{JSON.stringify(this.props.user)}
-				<p>A javascript programmer</p>
-				<img
-					src="/static/JavaScript-logo.png"
-					alt="javascript"
-					height="200px"
-				/>
+				<p>{user.name}</p>
+				<img src={user.avatar_url} alt="Me" height="200px" />
 			</Layout>
 		);
 	}
