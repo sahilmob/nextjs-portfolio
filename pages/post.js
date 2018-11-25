@@ -1,8 +1,10 @@
+import { withRouter } from "next/router";
+
 import Layout from "../components/Layout";
 
-export default function post(props) {
+const post = props => {
 	return (
-		<Layout title={props.url.query.title}>
+		<Layout title={props.router.query.title}>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed
 				placerat tortor. Pellentesque nibh diam, faucibus nec euismod tincidunt,
@@ -15,4 +17,6 @@ export default function post(props) {
 			</p>
 		</Layout>
 	);
-}
+};
+
+export default withRouter(post);
