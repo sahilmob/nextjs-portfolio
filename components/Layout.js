@@ -16,7 +16,7 @@ export default function Layout({ children, title }) {
 			</header>
 			<h1>{title}</h1>
 			{children}
-			<footer>footer</footer>
+			<footer>&copy; {new Date().getFullYear()}</footer>
 		</div>
 	);
 }
