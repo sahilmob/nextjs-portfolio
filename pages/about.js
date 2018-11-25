@@ -1,14 +1,12 @@
 import Link from "next/link";
 
+import Layout from "../components/Layout";
+
 export default function About() {
 	return (
-		<div>
-			<h1>About</h1>
-			<Link href="/">
-				<a>Go to home</a>
-			</Link>
+		<Layout title="About">
 			<p>A javascript programmer</p>
 			<img src="/static/JavaScript-logo.png" alt="javascript" height="200px" />
-		</div>
+		</Layout>
 	);
 }
