@@ -19,52 +19,23 @@ export default function Layout({ children, title }) {
 			<Head>
 				<title>Next Portfolio</title>
 			</Head>
-			<header>
+			<header className={classes.header}>
 				<Link href="/">
-					<a>Home</a>
+					<a className={classes.link}>Home</a>
 				</Link>
 				<Link href="/about">
-					<a>About</a>
+					<a className={classes.link}>About</a>
 				</Link>
 				<Link href="/hireme">
-					<a>Hire Me</a>
+					<a className={classes.link}>Hire Me</a>
 				</Link>
 				<Link href="/blog">
-					<a>Blog</a>
+					<a className={classes.link}>Blog</a>
 				</Link>
 			</header>
 			<h1>{title}</h1>
 			{children}
-			<footer>&copy; {new Date().getFullYear()}</footer>
-			<style jsx>
-				{`
-					// .root {
-					// 	display: flex;
-					// 	justify-content: center;
-					// 	align-items: center;
-					// 	flex-direction: column;
-					// }
-					header {
-						width: 100%;
-						display: flex;
-						justify-content: space-around;
-						padding: 1em;
-						font-size: 1.2rem;
-						background: indigo;
-					}
-					header a {
-						color: darkgrey;
-						text-decoration: none;
-					}
-					header a:hove {
-						font-weight: bold;
-						color: lightgrey;
-					}
-					footer {
-						padding: 1em;
-					}
-				`}
-			</style>
+			<footer className={classes.footer}>&copy; {new Date().getFullYear()}</footer>
 			<style jsx global>
 				{`
 					body {
