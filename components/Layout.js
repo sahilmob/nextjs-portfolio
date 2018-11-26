@@ -3,6 +3,8 @@ import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
 
+import classes from '../styles.css'
+
 Router.onRouteChangeStart = url => {
 	console.log(url);
 	NProgress.start();
@@ -13,7 +15,7 @@ Router.onRouteChangeError = () => NProgress.done();
 
 export default function Layout({ children, title }) {
 	return (
-		<div className="root">
+		<div className={classes.root}>
 			<Head>
 				<title>Next Portfolio</title>
 			</Head>
@@ -36,12 +38,12 @@ export default function Layout({ children, title }) {
 			<footer>&copy; {new Date().getFullYear()}</footer>
 			<style jsx>
 				{`
-					.root {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						flex-direction: column;
-					}
+					// .root {
+					// 	display: flex;
+					// 	justify-content: center;
+					// 	align-items: center;
+					// 	flex-direction: column;
+					// }
 					header {
 						width: 100%;
 						display: flex;
