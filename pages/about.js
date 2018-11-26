@@ -5,13 +5,11 @@ import fetch from "isomorphic-unfetch";
 
 import Layout from "../components/Layout";
 import Error from "./_error";
+import {getUserData} from '../store/actions'
 
 class about extends Component {
 	static async getInitialProps({store, isServer, pathname, query}) {
-		const res = await fetch("http://api.github.com/users/sahilmob");
-		const statusCode = res.status > 200 ? res.status : false;
-		const data = await res.json();
-		store.dispatch({type: "SET_USER_DATA", userData: data, statusCode})
+		const data = await store.dispatch(getUserData());
 	}
 
 
@@ -37,7 +35,8 @@ class about extends Component {
 
 const mapStateToPorps = state =>{
 	return {
-		userData: state.userData
+		userData: state.userData,
+		statusCode: state.statusCode
 	}
 }
 

@@ -10,7 +10,7 @@ import reducer from '../store/reducer'
 
 
 const makeStore = (initialState ,options)=>{
-    return createStore(reducer, initialState ,composeWithDevTools())
+    return createStore(reducer, initialState ,composeWithDevTools(applyMiddleware(thunk)))
 }
 class MainApp extends App {
     static async getInitialProps({Component, ctx}) {
@@ -31,4 +31,4 @@ class MainApp extends App {
   }
 }
 
-export default withRedux(makeStore, {debug: true})(MainApp)
+export default withRedux(makeStore)(MainApp)
