@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import fetch from "isomorphic-unfetch";
 
 import Layout from "../components/Layout";
 import Error from "./_error";
@@ -9,7 +8,7 @@ import {getUserData} from '../store/actions'
 
 class about extends Component {
 	static async getInitialProps({store, isServer, pathname, query}) {
-		const data = await store.dispatch(getUserData());
+		await store.dispatch(getUserData());
 	}
 
 
